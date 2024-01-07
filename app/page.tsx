@@ -1,112 +1,93 @@
-import Image from 'next/image'
+import { Button } from "@/components/ui/button"
+import { UserButton } from "@clerk/nextjs"
+import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+    <main className="">
+      <div className="flex flex-col lg:flex-row items-center bg-blue-500 dark:bg-slate-800">
+        <div className="p-10 flex flex-col bg-blue-950 dark:bg-slate-800 text-white space-y-5">
+          <h1 className="text-5xl font-bold">
+            Welcome to Nitip Euy. <br />
+            <br />
+            Storage everything for your needs, all in one place.
+          </h1>
+
+          <p className="pb-20">
+            Nitip Euy is a file storage service that allows you to store files
+            and share them with your friends.
+          </p>
+
+          <Link href="/dashboard" className="flex cursor-pointer bg-blue-800 p-5 w-fit">
+            Try it for free!
+            <ArrowRight className="ml-10" />
+          </Link>
+        </div>
+
+        <div className="bg-blue-500 dark:bg-slate-800 h-full p-10">
+          <video autoPlay loop muted className="rounded-lg">
+            <source
+              src="https://aem.dropbox.com/cms/content/dam/dropbox/warp/en-us/dropbox/dbx1-hero-1920x1080.mp4"
+              type="video/mp4"
             />
-          </a>
+            Your browser does not meet the minimum requirements to view this
+          </video>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="flex flex-col items-center justify-center p-10">
+        <p className="text-center text-3xl font-bold pb-10">
+          Features
+        </p>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 items-start justify-items-center">
+          <div className="flex flex-col items-center space-y-5">
+            <img src="https://i.postimg.cc/4yZ9FhJf/undraw-Cloud-files-re-v5qg.png" alt="Cloud files" className="w-80 h-80" />
+
+            <h2 className="text-2xl font-bold">
+              Cloud files
+            </h2>
+
+            <p className="text-center">
+              Store your files in the cloud! Access documents, photos, video, and more — anytime, anywhere.
+            </p>
+          </div>
+
+          <div className="flex flex-col items-center space-y-5">
+            <img src="https://i.postimg.cc/4Nf9P7Q8/undraw-Cloud-sync-re-0lxo.png" alt="Cloud sync" className="w-80 h-80" />
+
+            <h2 className="text-2xl font-bold">
+              Cloud sync
+            </h2>
+
+            <p className="text-center">
+              Sync your files automatically to your computer and use the Office mobile apps on your phone or tablet or Office Online right in your browser to stay productive and work together, no matter where you are.
+            </p>
+          </div>
+
+          <div className="flex flex-col items-center space-y-5">
+            <img src="https://i.postimg.cc/7Zr0Q4H4/undraw-Cloud-sharing-re-0jmo.png" alt="Cloud sharing" className="w-80 h-80" />
+
+            <h2 className="text-2xl font-bold">
+              Cloud sharing
+            </h2>
+
+            <p className="text-center">
+              Share files, folders, and photos with friends and family. No more large email attachments or thumb drives—just send a link via email, text, iMessage, or Facebook.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      <div className="bg-blue-500 dark:bg-slate-800">
+        <p className="text-center text-3xl font-bold py-5">
+          Disclaimer
+        </p>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+        <p className="text-center">
+          This web is purposes for test at GoFleet only.
+        </p>
       </div>
     </main>
   )
